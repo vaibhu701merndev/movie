@@ -22,16 +22,16 @@ function App() {
   }, []);
 
   const apiTesting = () => {
-    fetchDataFromApi("http://localhost:3000/0")
+    fetchDataFromApi("t=popular")
       .then((res) => {
-        dispatch(getApiConfiguration(res));
+        console.log(res)
       })
       .catch((err) => console.log(err));
   };
 
   return (
     <BrowserRouter>
-      <Header/>
+      {/* <Header/> */}
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/:mediaType/:id" element={<Details/>}/>
@@ -39,7 +39,7 @@ function App() {
         <Route path="/explore/:mediaType" element={<Explore/>}/>
         <Route path="*" element={<PageNotFound/>}/>
       </Routes>
-      <Footer/>
+      {/* <Footer/> */}
     </BrowserRouter>
   );
 }
